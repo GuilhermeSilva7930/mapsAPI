@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import "./MapPage.css"
 
 const MapPage = () => {
@@ -9,25 +9,26 @@ const MapPage = () => {
     googleMapsApiKey: "AIzaSyB5O8EukphBi5HvIGjipbCq0gsNSwMCMxY"
   })
 
-  const containerStyle = {
-    width: '600px',
-    height: '600px'
-  };
+  const position = {
+    lat: -23.497031,
+    lng: -46.692509
+  }
 
   return (
     <div className='map'>
-
       <h1 id='texto-principal'>Api do Maps</h1>
-
       {isLoaded ? (
         <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={{
-            lat: -23.488307,
-            lng: -46.686481
-          }}
+          mapContainerStyle={{ width: "100%", height: "100%" }}
+          center={position}
           zoom={15}
         >
+          <Marker position={position} options={{
+            label: {
+              text: "Mc Donalds",
+              className: "map-marker"
+            },
+          }}/>
         </GoogleMap>
       ) : <></>}
     </div>

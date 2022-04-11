@@ -6,8 +6,16 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    width: 100% !important;
 }
 
+.map-box {
+    max-width: 600px !important;
+}
+
+.map-marker {
+    margin-top: -32px;
+}
 
 #texto-principal {
     font-size: 2.3em;
@@ -16,7 +24,5 @@
     color: black;
     background-clip: text;
     -webkit-background-clip: text;
-
-    /* Adicionado: */
     -webkit-text-fill-color: transparent;
 }
